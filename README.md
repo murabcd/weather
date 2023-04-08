@@ -18,7 +18,6 @@ A simple weather app that fetches the current weather information based on the u
 1. Clone the repository:
 git clone https://github.com/muradpm/weather-app.git
 
-
 2. Replace `'YOUR_ACCUWEATHER_API_KEY'` in the `app.js` file with your actual AccuWeather API key.
 
 3. Open `index.html` in your preferred web browser to view the weather app.
