@@ -34,4 +34,11 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) License.
+
+## Contact
+
+If you have any questions, feel free to reach out to me:
+
+- LinkedIn: (https://www.linkedin.com/in/abdulkadyr0v/)
+- Twitter: (https://twitter.com/abdulkadyr0v)
