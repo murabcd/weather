@@ -15,7 +15,7 @@ window.addEventListener("load", () => {
       long = position.coords.longitude;
       lat = position.coords.latitude;
 
-      const apiKey = "VR9e25olnRFeqt3gjyQMEsJ2t7ZSrCGa";
+      const apiKey = "YOUR_ACCUWEATHER_API_KEY";
 
       const getLocationData = async () => {
         const locationApi = `https://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=${apiKey}&q=${lat},${long}`;
