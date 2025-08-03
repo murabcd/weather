@@ -1,39 +1,50 @@
-# Weather App
+<a href="https://weather-app-demo.vercel.app">
+<!-- <img alt="Beautiful Weather App with macOS-inspired design" src="./public/preview/weather.png"> -->
+  <h1 align="center">Weather</h1>
+</a>
 
-A simple weather app that fetches the current weather information based on the user's geolocation using the AccuWeather API.
+<p align="center">
+  Beautiful Weather with MacOS-inspired Design
+</p>
+
+<p align="center">
+  <a href="#features"><strong>Features</strong></a> ·
+  <a href="#deploy-your-own"><strong>Deploy your own</strong></a> ·
+  <a href="#running-locally"><strong>Running locally</strong></a>
+</p>
+<br/>
 
 ## Features
 
-- Displays the current weather conditions for the user's location
-- Shows the temperature in Celsius
-- Displays the weather description
-- Shows the appropriate weather icon based on the current conditions
+- [Next.js 15](https://nextjs.org)
+  - App Router with file-based routing and server components
+  - Built-in API routes for AccuWeather integration
+- [AccuWeather API](https://developer.accuweather.com)
+  - Real-time weather data and forecasts
+  - Current conditions, hourly, and 10-day forecasts
+- [Shadcn/ui](https://ui.shadcn.com)
+  - Beautiful, accessible UI components built with Radix UI
+  - Custom components for consistent design and developer experience
 
-## Prerequisites
+## Deploy your own
 
-- An AccuWeather API key. You can sign up for a free account at [AccuWeather API](https://developer.accuweather.com/apis).
+You can deploy your own version of Weather to Vercel with one click:
 
-## Usage
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyourusername%2Fweather&env=ACCUWEATHER_API_KEY&envDescription=Your%20AccuWeather%20API%20key%20for%20weather%20data&envLink=https%3A%2F%2Fdeveloper.accuweather.com%2F&demo-title=Weather%20App&demo-description=Beautiful%20weather%20application%20with%20macOS-inspired%20design%20built%20with%20Next.js%2015%20and%20AccuWeather%20API.&demo-url=https%3A%2F%2Fweather-app-demo.vercel.app)
 
-1. Clone the repository:
-git clone https://github.com/muradpm/weather-app.git
+## Running locally
 
+You will need to use the environment variables [defined in `.env.example`](.env.example) to run Weather. It's recommended you use [Vercel Environment Variables](https://vercel.com/docs/projects/environment-variables) for this, but a `.env` file is all that is necessary.
 
-2. Replace `'YOUR_ACCUWEATHER_API_KEY'` in the `app.js` file with your actual AccuWeather API key.
+> Note: You should not commit your `.env` file or it will expose secrets that will allow others to control access to your various accounts.
 
-3. Open `index.html` in your preferred web browser to view the weather app.
+1. Install Vercel CLI: `bun i -g vercel`
+2. Link local instance with Vercel and GitHub accounts (creates `.vercel` directory): `vercel link`
+3. Download your environment variables: `vercel env pull`
 
-## Technologies
+```bash
+bun install
+bun dev
+```
 
-- HTML
-- CSS
-- JavaScript
-- AccuWeather API
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
+Your app should now be running on [localhost:3000](http://localhost:3000/)
