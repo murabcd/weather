@@ -38,9 +38,10 @@ You will need to use the environment variables [defined in `.env.example`](.env.
 
 > Note: You should not commit your `.env` file or it will expose secrets that will allow others to control access to your various accounts.
 
-1. Install Vercel CLI: `bun i -g vercel`
-2. Link local instance with Vercel and GitHub accounts (creates `.vercel` directory): `vercel link`
-3. Download your environment variables: `vercel env pull`
+1. Clone the repository: `git clone https://github.com/muradpm/weather-app.git`
+2. Install Vercel CLI: `bun i -g vercel`
+3. Link local instance with Vercel and GitHub accounts (creates `.vercel` directory): `vercel link`
+4. Download your environment variables: `vercel env pull`
 
 ```bash
 bun install
@@ -48,3 +49,25 @@ bun dev
 ```
 
 Your app should now be running on [localhost:3000](http://localhost:3000/)
+
+## Tech Stack
+
+- HTML
+- CSS
+- JavaScript
+- AccuWeather API
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) License.
+
+## Contact
+
+If you have any questions, feel free to reach out to me:
+
+- [LinkedIn](https://www.linkedin.com/in/abdulkadyr0v/)
+- [Twitter](https://twitter.com/abdulkadyr0v)
