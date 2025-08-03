@@ -7,8 +7,6 @@ export async function GET(request: NextRequest) {
 	const { searchParams } = new URL(request.url);
 	const query = searchParams.get("q");
 
-	console.log("🔍 Search request received:", { query });
-
 	if (!ACCUWEATHER_API_KEY) {
 		console.error("❌ AccuWeather API key not configured");
 		return NextResponse.json(
@@ -16,8 +14,6 @@ export async function GET(request: NextRequest) {
 			{ status: 500 },
 		);
 	}
-
-	console.log("✅ API key found:", ACCUWEATHER_API_KEY ? "Present" : "Missing");
 
 	if (!query) {
 		console.error("❌ Query parameter missing");
@@ -29,24 +25,11 @@ export async function GET(request: NextRequest) {
 
 	try {
 		const url = `${BASE_URL}/locations/v1/cities/search?apikey=${ACCUWEATHER_API_KEY}&q=${encodeURIComponent(query)}&language=en-us&details=false&topLevel=1`;
-		console.log("🌐 Making request to:", url);
 
 		const response = await fetch(url);
 
-		console.log("📡 Response status:", response.status);
-		console.log("📡 Response status text:", response.statusText);
-		console.log(
-			"📡 Response headers:",
-			Object.fromEntries(response.headers.entries()),
-		);
-
 		if (!response.ok) {
-			const errorText = await response.text();
-			console.error("❌ API response not ok:", {
-				status: response.status,
-				statusText: response.statusText,
-				errorText: errorText,
-			});
+			await response.text();
 
 			// Handle specific error cases
 			if (response.status === 503) {

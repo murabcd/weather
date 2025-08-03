@@ -1,6 +1,6 @@
-<a href="https://weather-app-demo.vercel.app">
-<!-- <img alt="Beautiful Weather App with macOS-inspired design" src="./public/preview/weather.png"> -->
-  <h1 align="center">Weather</h1>
+<a href="https://weather-os.vercel.app">
+<img alt="Beautiful Weather with MacOS-inspired Design" src="./public/preview/weather-os.png">
+  <h1 align="center">WeatherOS</h1>
 </a>
 
 <p align="center">
@@ -28,13 +28,13 @@
 
 ## Deploy your own
 
-You can deploy your own version of Weather to Vercel with one click:
+You can deploy your own version of WeatherOS to Vercel with one click:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyourusername%2Fweather&env=ACCUWEATHER_API_KEY&envDescription=Your%20AccuWeather%20API%20key%20for%20weather%20data&envLink=https%3A%2F%2Fdeveloper.accuweather.com%2F&demo-title=Weather%20App&demo-description=Beautiful%20weather%20application%20with%20macOS-inspired%20design%20built%20with%20Next.js%2015%20and%20AccuWeather%20API.&demo-url=https%3A%2F%2Fweather-app-demo.vercel.app)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyourusername%2Fweather&env=ACCUWEATHER_API_KEY&envDescription=Your%20AccuWeather%20API%20key%20for%20weather%20data&envLink=https%3A%2F%2Fdeveloper.accuweather.com%2F&demo-title=WeatherOS&demo-description=Beautiful%20weather%20application%20with%20macOS-inspired%20design%20built%20with%20Next.js%2015%20and%20AccuWeather%20API.&demo-url=https%3A%2F%2Fweatheros.vercel.app)
 
 ## Running locally
 
-You will need to use the environment variables [defined in `.env.example`](.env.example) to run Weather. It's recommended you use [Vercel Environment Variables](https://vercel.com/docs/projects/environment-variables) for this, but a `.env` file is all that is necessary.
+You will need to use the environment variables [defined in `.env.example`](.env.example) to run WeatherOS. It's recommended you use [Vercel Environment Variables](https://vercel.com/docs/projects/environment-variables) for this, but a `.env` file is all that is necessary.
 
 > Note: You should not commit your `.env` file or it will expose secrets that will allow others to control access to your various accounts.
 

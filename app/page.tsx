@@ -5,9 +5,9 @@ import { useState } from "react";
 import { Bubbles, Plus } from "lucide-react";
 
 import { AppSidebar } from "@/components/app-sidebar";
-import { CitySearchDialog } from "@/components/city-search-dialog";
+import { SearchDialog } from "@/components/search-dialog";
 import { EmptyState } from "@/components/empty-state";
-import { WeatherDetailView } from "@/components/weather-detail-view";
+import { WeatherDashboard } from "@/components/weather-dashboard";
 import {
 	SidebarInset,
 	SidebarProvider,
@@ -65,23 +65,23 @@ export default function Page() {
 				<header className="flex h-16 shrink-0 items-center justify-between px-6 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
 					<div className="flex items-center gap-2">
 						<SidebarTrigger className="-ml-1" />
-						<span className="text-lg font-semibold">Weather</span>
+						<span className="text-lg font-semibold">WeatherOS</span>
 					</div>
 					<div className="flex items-center">
-						<CitySearchDialog
+						<SearchDialog
 							onAddCity={handleAddCity}
 							open={isDialogOpen}
 							onOpenChange={setIsDialogOpen}
 						/>
 					</div>
 				</header>
-				<div className="flex flex-1 flex-col overflow-hidden overflow-x-hidden">
+				<div className="flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
 					{selectedCity ? (
-						<WeatherDetailView city={selectedCity} />
+						<WeatherDashboard city={selectedCity} />
 					) : (
 						<EmptyState
 							icon={Bubbles}
-							title="Welcome to Weather"
+							title="Welcome to WeatherOS"
 							description="Add a city to get started and view detailed weather information"
 							actionLabel="Add city"
 							onAction={handleOpenAddCity}

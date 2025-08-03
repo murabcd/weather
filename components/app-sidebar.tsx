@@ -2,12 +2,12 @@
 
 import type * as React from "react";
 
-import { CityListItem } from "@/components/city-list-item";
+import { ListItem } from "@/components/list-item";
+import { ThemeToggle } from "@/components/theme-toggle";
 import {
 	Sidebar,
 	SidebarContent,
 	SidebarFooter,
-	SidebarHeader,
 	SidebarRail,
 } from "@/components/ui/sidebar";
 
@@ -42,7 +42,7 @@ export function AppSidebar({
 					</div>
 				) : (
 					cities.map((city) => (
-						<CityListItem
+						<ListItem
 							key={city.key}
 							city={city}
 							isSelected={selectedCity?.key === city.key}
@@ -52,7 +52,11 @@ export function AppSidebar({
 					))
 				)}
 			</SidebarContent>
-			<SidebarFooter></SidebarFooter>
+			<SidebarFooter className="p-4">
+				<div className="flex justify-center">
+					<ThemeToggle />
+				</div>
+			</SidebarFooter>
 			<SidebarRail />
 		</Sidebar>
 	);

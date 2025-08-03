@@ -23,17 +23,17 @@ interface City {
 	key: string;
 }
 
-interface CitySearchDialogProps {
+interface SearchDialogProps {
 	onAddCity: (city: City) => void;
 	open?: boolean;
 	onOpenChange?: (open: boolean) => void;
 }
 
-export function CitySearchDialog({
+export function SearchDialog({
 	onAddCity,
 	open,
 	onOpenChange,
-}: CitySearchDialogProps) {
+}: SearchDialogProps) {
 	const [searchQuery, setSearchQuery] = useState("");
 	const [searchResults, setSearchResults] = useState<City[]>([]);
 	const [isSearching, setIsSearching] = useState(false);
@@ -134,7 +134,7 @@ export function CitySearchDialog({
 
 				{searchResults.length > 0 && (
 					<div className="space-y-2">
-						<h3 className="text-sm font-medium">Search Results</h3>
+						<h3 className="text-sm font-medium">Search results</h3>
 						<div className="space-y-1">
 							{searchResults.map((city, index) => (
 								<Button

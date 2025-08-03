@@ -25,19 +25,19 @@ interface WeatherData {
 	WeatherText: string;
 }
 
-interface CityListItemProps {
+interface ListItemProps {
 	city: City;
 	isSelected: boolean;
 	onSelect: () => void;
 	onRemove: () => void;
 }
 
-export function CityListItem({
+export function ListItem({
 	city,
 	isSelected,
 	onSelect,
 	onRemove,
-}: CityListItemProps) {
+}: ListItemProps) {
 	const [weather, setWeather] = useState<WeatherData | null>(null);
 	const [loading, setLoading] = useState(true);
 
@@ -81,7 +81,7 @@ export function CityListItem({
 
 	return (
 		<Card
-			className={`cursor-pointer transition-colors border ${isSelected ? "bg-accent/20" : "hover:bg-accent/10"}`}
+			className={`cursor-pointer transition-colors border ${isSelected ? "bg-primary/10 border-primary/20" : "bg-card hover:bg-accent/50 border-border"}`}
 			onClick={onSelect}
 		>
 			<CardContent className="p-4">

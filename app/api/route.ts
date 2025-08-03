@@ -1,12 +1,12 @@
 import { type NextRequest, NextResponse } from "next/server";
 
 const ACCUWEATHER_API_KEY = process.env.ACCUWEATHER_API_KEY;
-const BASE_URL = "http://dataservice.accuweather.com";
+const BASE_URL = "https://dataservice.accuweather.com";
 
 export async function GET(request: NextRequest) {
 	const { searchParams } = new URL(request.url);
 	const location = searchParams.get("location");
-	const type = searchParams.get("type"); // 'current', 'forecast'
+	const type = searchParams.get("type");
 
 	if (!ACCUWEATHER_API_KEY) {
 		return NextResponse.json(
@@ -19,8 +19,13 @@ export async function GET(request: NextRequest) {
 		switch (type) {
 			case "current":
 				return await getCurrentConditions(location);
-			case "forecast":
-				return await getForecast(location);
+			case "hourly":
+				return await getHourly(location);
+			case "daily":
+				return await getDaily(location);
+			case "astronomy":
+				// derive from currentconditions details for free plan
+				return await getCurrentConditions(location);
 			default:
 				return NextResponse.json(
 					{ error: "Invalid request type" },
@@ -46,6 +51,7 @@ async function getCurrentConditions(locationKey: string | null) {
 
 	const response = await fetch(
 		`${BASE_URL}/currentconditions/v1/${locationKey}?apikey=${ACCUWEATHER_API_KEY}&details=true`,
+		{ next: { revalidate: 300 } },
 	);
 
 	if (!response.ok) {
@@ -56,7 +62,7 @@ async function getCurrentConditions(locationKey: string | null) {
 	return NextResponse.json(data[0]);
 }
 
-async function getForecast(locationKey: string | null) {
+async function getDaily(locationKey: string | null) {
 	if (!locationKey) {
 		return NextResponse.json(
 			{ error: "Location key required" },
@@ -64,7 +70,6 @@ async function getForecast(locationKey: string | null) {
 		);
 	}
 
-	// Get 5-day forecast
 	const response = await fetch(
 		`${BASE_URL}/forecasts/v1/daily/5day/${locationKey}?apikey=${ACCUWEATHER_API_KEY}&details=true&metric=false`,
 	);
@@ -73,6 +78,23 @@ async function getForecast(locationKey: string | null) {
 		throw new Error("Failed to fetch forecast");
 	}
 
+	const data = await response.json();
+	return NextResponse.json(data);
+}
+
+async function getHourly(locationKey: string | null) {
+	if (!locationKey) {
+		return NextResponse.json(
+			{ error: "Location key required" },
+			{ status: 400 },
+		);
+	}
+	const response = await fetch(
+		`${BASE_URL}/forecasts/v1/hourly/12hour/${locationKey}?apikey=${ACCUWEATHER_API_KEY}&details=true&metric=false`,
+	);
+	if (!response.ok) {
+		throw new Error("Failed to fetch hourly forecast");
+	}
 	const data = await response.json();
 	return NextResponse.json(data);
 }
