@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 import {
 	Cloud,
 	CloudRain,
@@ -12,7 +14,7 @@ import {
 	Thermometer,
 	Wind,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 

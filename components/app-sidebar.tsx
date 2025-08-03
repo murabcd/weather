@@ -1,8 +1,8 @@
 "use client";
 
 import type * as React from "react";
-import { CityListItem } from "@/components/city-list-item";
 
+import { CityListItem } from "@/components/city-list-item";
 import {
 	Sidebar,
 	SidebarContent,

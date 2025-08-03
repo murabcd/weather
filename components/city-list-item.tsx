@@ -1,7 +1,9 @@
 "use client";
 
-import { MapPin, X } from "lucide-react";
 import { useEffect, useState } from "react";
+
+import { MapPin, X } from "lucide-react";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 

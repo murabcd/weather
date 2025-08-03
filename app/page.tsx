@@ -1,16 +1,18 @@
 "use client";
 
 import { useState } from "react";
+
 import { Bubbles, Plus } from "lucide-react";
+
 import { AppSidebar } from "@/components/app-sidebar";
 import { CitySearchDialog } from "@/components/city-search-dialog";
 import { EmptyState } from "@/components/empty-state";
+import { WeatherDetailView } from "@/components/weather-detail-view";
 import {
 	SidebarInset,
 	SidebarProvider,
 	SidebarTrigger,
 } from "@/components/ui/sidebar";
-import { WeatherDetailView } from "@/components/weather-detail-view";
 
 interface City {
 	name: string;

@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 
 interface EmptyStateProps {
@@ -31,7 +32,11 @@ export function EmptyState({
 			</p>
 			{onAction && (
 				<div className="mt-6">
-					<Button onClick={onAction} disabled={isLoading}>
+					<Button
+						onClick={onAction}
+						disabled={isLoading}
+						className="cursor-pointer"
+					>
 						{ButtonIcon && <ButtonIcon className="w-4 h-4 mr-2" />}
 						{actionLabel}
 					</Button>

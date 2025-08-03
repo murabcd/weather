@@ -52,8 +52,7 @@ export async function GET(request: NextRequest) {
 			if (response.status === 503) {
 				return NextResponse.json(
 					{
-						error:
-							"API rate limit exceeded. Please try again in a few minutes.",
+						error: "API rate limit exceeded. Please try again later.",
 						details:
 							"The AccuWeather API has exceeded the allowed number of requests.",
 					},

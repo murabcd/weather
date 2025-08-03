@@ -1,8 +1,11 @@
 "use client";
 
-import { AlertCircle, MapPin, Search, Plus } from "lucide-react";
 import { useState } from "react";
+
+import { AlertCircle, MapPin, Search, Plus } from "lucide-react";
+
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
 	Dialog,
@@ -11,8 +14,6 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from "@/components/ui/dialog";
-
-import { Input } from "@/components/ui/input";
 
 interface City {
 	name: string;
@@ -98,7 +99,7 @@ export function CitySearchDialog({
 	return (
 		<Dialog open={isOpen} onOpenChange={setIsOpen}>
 			<DialogTrigger asChild>
-				<Button variant="outline" size="sm">
+				<Button variant="outline" size="sm" className="cursor-pointer">
 					<Plus className="h-4 w-4 mr-2" />
 					Add city
 				</Button>

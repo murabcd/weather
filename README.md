@@ -16,7 +16,7 @@
 
 ## Features
 
-- [Next.js 15](https://nextjs.org)
+- [Next.js](https://nextjs.org)
   - App Router with file-based routing and server components
   - Built-in API routes for AccuWeather integration
 - [AccuWeather API](https://developer.accuweather.com)
